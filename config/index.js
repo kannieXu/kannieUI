@@ -1,0 +1,33 @@
+var path = require('path')
+module.exports = {
+  build: {
+    env: require('./prod.env'),
+    index: path.resolve(__dirname, '../dist/index.html'),
+    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '/',
+    productionSourceMap: true,
+    productionGzip: false,
+    productionGzipExtensions: ['js', 'css'],
+    bundleAnalyzerReport: process.env.npm_config_report
+  },
+  npm: {
+    env: {
+      NODE_ENV: '"npm"'
+    },
+    assetsRoot: path.resolve(__dirname, '../lib'),
+    assetsSubDirectory: '',
+    assetsPublicPath: '/lib',
+    proxyTable: {},
+    cssSourceMap: false
+  },
+  dev: {
+    env: require('./dev.env'),
+    port: 8888,
+    autoOpenBrowser: true,
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '/',
+    proxyTable: {},
+    cssSourceMap: false
+  }
+}
